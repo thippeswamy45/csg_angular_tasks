@@ -1,0 +1,78 @@
+<!--
+<table  id="userDetailsTable">
+  <thead>
+    <tr>
+    <th>actions</th>
+    <th>id</th>
+    <th>name</th>
+    <th>username</th>
+    <th>email</th>
+    <th>street</th>
+     <th>city</th>
+     <th>zip code</th>
+    <th>pn</th>
+    <th>company name</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of userList">
+      <td><button (click)="editForm(obj.id)">edit</button> <button (click)="deleteElement(obj.id)">delete</button></td>
+      <td>{{obj.id}}</td>
+      <td>{{obj.name}}</td>
+      <td>{{obj.username}}</td>
+      <td>{{obj.email}}</td>
+      <td>{{obj.address.street}}</td>
+      <td>{{obj.address.city}}</td>
+      <td>{{obj.address.zipcode}}</td>
+      <td>{{obj.phone}}</td>
+      <td>{{obj.company.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="showForm">
+  <app-user-form [userDetails]="userList[arrayIndex]" (updateEvent)="takeValue($event)"></app-user-form>
+</div>   
+
+
+
+
+-->
+
+
+
+<mat-table [dataSource]="data$ | Async" id="userTable">
+
+ 
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef>username</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.username}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>email</mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.email}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>actions</mat-header-cell>
+    <mat-cell *matCellDef="let user"><button (click)="editForm(user.id)" >edit</button><!-- <button (click)="deleteElement(user.id)" >delete</button>--></mat-cell>
+</ng-container>
+
+  <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+</mat-table>
+
+<div *ngIf="showFormFlag">
+<app-user-form  [userDetails]="data[arrayIndex]"  (updateFormEvent)=takeValue($event)   (cancelEvent)="cancel($event)"></app-user-form>
+</div>

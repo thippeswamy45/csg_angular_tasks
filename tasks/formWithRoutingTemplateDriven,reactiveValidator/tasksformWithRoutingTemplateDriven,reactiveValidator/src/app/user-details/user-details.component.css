@@ -1,0 +1,20 @@
+#userDetailsTable,td,tr,thead,th{
+    border-collapse: collapse;
+    border: 2px solid black;
+
+}
+td,th{
+    padding: 5px;
+    font-size: 25px;
+}
+#userDetailsTable{
+    margin: auto;
+}
+
+a{
+    text-decoration :none;
+}
+.newbtn{
+    margin-top: 31px;
+    margin-left: 650px;
+}

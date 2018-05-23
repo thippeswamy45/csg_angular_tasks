@@ -1,0 +1,40 @@
+
+
+
+
+<table *ngIf="!showTable" id="userDetailsTable">
+    <thead>
+      <tr>
+      <th>actions</th>
+      <th>id</th>
+      <th>name</th>
+      <th>username</th>
+      <th>email</th>
+      <th>street</th>
+       <th>city</th>
+       <th>zip code</th>
+      <th>pn</th>
+      <th>company name</th>
+     
+     </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of userList">
+        <td><button (click)="editForm(obj.id)">edit</button> <button (click)="deleteElement(obj.id)">delete</button></td>
+        <td>{{obj.id}}</td>
+        <td>{{obj.name}}</td>
+        <td>{{obj.username}}</td>
+        <td>{{obj.email}}</td>
+        <td>{{obj.address.street}}</td>
+        <td>{{obj.address.city}}</td>
+        <td>{{obj.address.zipcode}}</td>
+        <td>{{obj.phone}}</td>
+        <td>{{obj.company.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div *ngIf="showForm">
+  <app-form [userDetails]="userList[arrayIndex]" (updateEvent)="takeValue($event)"></app-form>
+</div>    
+

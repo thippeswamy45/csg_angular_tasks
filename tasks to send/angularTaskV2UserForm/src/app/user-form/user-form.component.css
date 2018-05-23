@@ -1,0 +1,68 @@
+label{
+    width:180px;
+    clear:left;
+    text-align:left;
+   padding-right:10px;
+  
+}
+.alert_text{
+clear:both;
+margin-left:200px;
+padding:0px;
+margin-bottom:0px;
+color:red;
+
+}
+
+select,textarea,input,label,p.lang_p,.gender_p{
+    float:left;
+	margin-top:20px;
+   
+}
+input.radio,input.lang{
+    float:none;
+    margin-top:0;
+}
+.colon{
+float:right;
+}
+div{
+	clear:left;
+	
+}
+#submit{
+	
+	margin-left:70px;
+	margin-top:30px;
+}
+p.alert_text{
+	clear:left;
+	padding-top:50px;
+
+}
+
+#form1{
+    border: 2px solid lightgray;
+    width: 800px;
+    margin: auto;
+    padding-left: 106px;
+    padding-bottom: 10px;
+    padding-right: 106px;
+}
+#checkbox{
+    margin-top: 18px;
+    width: 25px;
+    height: 28px;
+}
+#text_address{
+    width: 168px;
+}
+#data {
+	margin-top:10px;
+	max-width:831px;
+	overflow-x:scroll;
+}
+#inner{
+    position: relative;
+    left: 224px;
+}

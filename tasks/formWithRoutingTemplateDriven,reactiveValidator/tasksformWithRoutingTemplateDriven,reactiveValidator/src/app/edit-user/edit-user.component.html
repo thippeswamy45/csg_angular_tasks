@@ -1,0 +1,25 @@
+
+<form (ngSubmit)="submitForm(f)" #f="ngForm" id="form1">
+  <div id="inner">
+    <label>Firstname<span class="colon">:</span></label>
+    <input type="text" required name="fn" id="text_fn"  [(ngModel)]="userDetails.FN">
+   
+    <label>Lastname<span class="colon">:</span></label>
+    <input type="text" required name="ln" id="text_ln"  [(ngModel)]="userDetails.LN">
+
+    <label>Address<span class="colon" >:</span></label>
+    <textarea id="text_address" name="addr" [(ngModel)]="userDetails.address"></textarea>
+  
+    <label>Phone no<span class="colon" >:</span></label>
+    <input type="text" required name="pn" id="text_pn" [(ngModel)]="userDetails.pn">
+    
+    <label >Email<span class="colon">:</span></label>
+    <input type="email" name="email" email required ngModel #email='ngModel' id="text_email"  [(ngModel)]="userDetails.Email">
+    <p  *ngIf="!email.valid && email.touched"  class="alert_text">{{alert_string}} </p>
+   
+    <div>
+      <button id="submit" [disabled]=!f.valid type="submit">submit</button>
+    </div>
+  </div>
+ 
+</form>   

@@ -1,0 +1,18 @@
+#userDetailsTable,td,tr,thead,th{
+    border-collapse: collapse;
+    border: 2px solid black;
+
+}
+td,th{
+    padding: 5px;
+    font-size: 15px;
+}
+#userDetailsTable{
+    margin: auto;
+}
+#userDetailsTable{
+    overflow: scroll;
+}
+a{
+    text-decoration :none;
+}

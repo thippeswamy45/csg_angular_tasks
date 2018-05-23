@@ -1,0 +1,60 @@
+
+<form (ngSubmit)="submitForm(f)" #f="ngForm" id="form1">
+  <div id="inner">
+    <label>Firstname<span class="colon">:</span></label>
+    <input type="text" name="fn" id="text_fn"  [(ngModel)]="userDetails.fn">
+   
+
+    <label>Lastname<span class="colon">:</span></label>
+    <input type="text" required name="ln" id="text_ln"  [(ngModel)]="userDetails.ln">
+  
+
+    <label>Role <span class="colon">:</span></label>
+    <select  name="role" required [(ngModel)]="userDetails.role" >
+      <option *ngFor="let role of roles">{{role}} </option>
+    </select>
+    <p *ngIf="alert_role" class="alert_text">{{alert_string}} </p>
+
+    <label>Address<span class="colon" >:</span></label>
+    <textarea id="text_address" required name="addr" [(ngModel)]="userDetails.addr"></textarea>
+    <p *ngIf="alert_addr" class="alert_text">{{alert_string}} </p>
+    <div class="gender">
+      <label>Gender<span class="colon">:</span></label>
+      <p class="gender_p">
+        <span>male</span>
+        <span><input type="radio" name="gender" value="male" required class="radio" [(ngModel)]="userDetails.gender"></span>
+        
+        <span>Female</span>
+        <span><input type="radio" name="gender" value="female" required class="radio" [(ngModel)]="userDetails.gender"></span>
+      </p>
+    </div>
+    <div class="language">
+      <label>languages known<span class="colon">:</span></label>
+      <p class="lang_p">
+        <span>Java</span>
+        <input id="checkbox1" type="checkbox" name="java" class="lang"  [(ngModel)]="checkLanguages[0]"  >
+        <span>c#</span>
+        <input id="checkbox2" type="checkbox" name="c#"  class="lang" [(ngModel)]="checkLanguages[1]">
+        <span>Javascript</span>
+        <input id="checkbox3" type="checkbox" name="js"  class="lang" [(ngModel)]="checkLanguages[2]">
+      </p>
+    </div>
+    <label>additional info<span class="colon">:</span></label>
+    <input id="checkbox" type="checkbox" (click)="checkFlag()">
+    <p class="alert_text"></p>
+
+    <div *ngIf="flag">
+      <label>Phone no<span class="colon" >:</span></label>
+      <input type="text" name="pn" id="text_pn" [(ngModel)]="userDetails.pn">
+      <p *ngIf="alert_pn" required class="alert_text">{{alert_string}} </p>
+
+      <label >Email<span class="colon">:</span></label>
+      <input type="email" name="email"  required ngModel #email='ngModel' id="text_email"  [(ngModel)]="userDetails.email">
+      <p  *ngIf="!email.valid && email.touched"  class="alert_text">{{alert_string}} </p>
+    </div>
+    <div>
+      <button id="submit" [disabled]="!f.valid" type="submit">submit</button>
+    </div>
+  </div>
+  <p id="data">{{json}}</p>
+</form>   

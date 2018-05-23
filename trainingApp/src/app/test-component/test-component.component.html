@@ -1,0 +1,23 @@
+
+  <h1 >
+    this is unordered list component
+    </h1>
+  <ul>
+    <li *ngFor="let carName of carList">{{carName}}</li>
+  </ul>
+  <div ="true">
+    <label>Phone no<span class="colon" >:</span></label>
+    <input type="text"  id="text_pn" #pn >
+    <p id="alert_pn" class="alert_text"> </p>
+
+    <label >Email<span class="colon">:</span></label>
+    <input type="email"  id="text_email" #email>
+    <p id="alert_email" class="alert_text"> </p>
+  </div>
+  <div>
+    <button id="submit" (click)="submitForm(pn.value,email.value)">submit</button>
+
+  </div>
+
+<input type="text" #value1>
+<button (click)="getVal(value1.value)">button</button>

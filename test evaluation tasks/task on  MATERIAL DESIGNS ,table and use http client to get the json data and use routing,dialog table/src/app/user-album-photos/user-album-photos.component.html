@@ -1,0 +1,32 @@
+
+<mat-table [dataSource]="albumPhotos$ | async" id="userTable">
+
+ 
+  <ng-container matColumnDef="albumId">
+    <mat-header-cell *matHeaderCellDef>albumId</mat-header-cell>
+    <mat-cell *matCellDef="let photo"> {{photo.albumId}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>photo id</mat-header-cell>
+    <mat-cell *matCellDef="let photo"> {{photo.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef> photo title</mat-header-cell>
+    <mat-cell *matCellDef="let photo"> {{photo.title}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef>url</mat-header-cell>
+    <mat-cell *matCellDef="let photo">  <img [src]="photo.url" alt='na' width="50px" height="50px"></mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="thumbnailUrl">
+    <mat-header-cell *matHeaderCellDef >thumbnailUrl</mat-header-cell>
+    <mat-cell *matCellDef="let photo">  <img [src]=photo.thumbnailUrl alt='na'width="50px" height="50px" ></mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+</mat-table>

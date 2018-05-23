@@ -1,0 +1,5 @@
+<button (click)="makeRequest()">make Request </button>
+<button (click)="makeRequestObservable()">make Request Observable</button>
+<button (click)="makeRequestObservableData()">make Request Observable data</button>
+<p *ngIf="loading">loading... </p>
+<pre>{{data|json}}</pre>

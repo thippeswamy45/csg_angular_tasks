@@ -1,0 +1,51 @@
+
+
+
+<form (ngSubmit)="submitForm(f)" #f="ngForm" id="form1">
+  <div id="inner">
+    <label>name<span class="colon">:</span></label>
+    <input type="text" required name="name"   [(ngModel)]="userDetails.name">
+   
+    <label>username<span class="colon">:</span></label>
+    <input type="text" required name="username"   [(ngModel)]="userDetails.username">
+
+    <label >Email<span class="colon">:</span></label>
+    <input type="email" name="email"  disabled  [(ngModel)]="userDetails.email">
+    
+    <label>address info<span class="colon" >:</span></label>
+    <div class ="address">
+      <label>street<span class="colon" >:</span></label>
+      <textarea id="text_address" name="street" [(ngModel)]="userDetails.address.street"></textarea>
+    
+      <label>city<span class="colon" >:</span></label>
+      <input type="text" required name="city" id="text_city" [(ngModel)]="userDetails.address.city">
+
+      <label>zipcode<span class="colon" >:</span></label>
+      <input type="text" required name="zipcode" id="text_zipcode" [(ngModel)]="userDetails.address.zipcode">
+
+      <label>Phone no<span class="colon" >:</span></label>
+      <input type="text" required name="pn" id="text_pn" [(ngModel)]="userDetails.phone">
+      
+      <label>company name<span class="colon" >:</span></label>
+      <input type="text" required name="companyname" id="text_company" [(ngModel)]="userDetails.company.name">
+    </div>  
+    
+   
+    <div class="buttons">
+     
+      <button type="button" (click)="display()">display data</button>
+     
+    </div>
+  </div>
+ 
+</form>   
+
+
+<pre *ngIf="displayFlag">{{userDetails|json}}</pre>
+
+
+
+
+
+
+

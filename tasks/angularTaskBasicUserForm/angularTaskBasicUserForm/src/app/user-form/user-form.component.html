@@ -1,0 +1,42 @@
+
+
+<div id="form1">
+  <div id="inner">
+    <label>Firstname<span class="colon">:</span></label>
+    <input type="text" id="text_fn" [(ngModel)]="userDetails.fn">
+    <p *ngIf="alert_fn" class="alert_text"> {{alert_string}}</p>
+
+    <label>Lastname<span class="colon">:</span></label>
+    <input type="text" id="text_ln"  [(ngModel)]="userDetails.ln">
+    <p *ngIf="alert_ln" class="alert_text">{{alert_string}} </p>
+
+    <label>Role <span class="colon">:</span></label>
+    <select  [(ngModel)]="userDetails.role" >
+      <option *ngFor="let role of roles">{{role}} </option>
+    </select>
+    <p *ngIf="alert_role" class="alert_text">{{alert_string}} </p>
+
+    <label>Address<span class="colon" >:</span></label>
+    <textarea id="text_address" [(ngModel)]="userDetails.addr"></textarea>
+    <p *ngIf="alert_addr" class="alert_text">{{alert_string}} </p>
+
+    <label>additional info<span class="colon">:</span></label>
+    <input id="checkbox" type="checkbox" (click)="checkFlag()">
+    <p class="alert_text"></p>
+
+    <div [hidden]="!flag">
+      <label>Phone no<span class="colon" >:</span></label>
+      <input type="text"  id="text_pn" [(ngModel)]="userDetails.pn">
+      <p *ngIf="alert_pn" class="alert_text">{{alert_string}} </p>
+
+      <label >Email<span class="colon">:</span></label>
+      <input type="email"  id="text_email"  [(ngModel)]="userDetails.email">
+      <p  *ngIf="alert_email" class="alert_text">{{alert_string}} </p>
+    </div>
+    <div>
+      <button id="submit" (click)="submitForm()">submit</button>
+
+    </div>
+  </div>
+  <p id="data">{{json}}</p>
+</div>   

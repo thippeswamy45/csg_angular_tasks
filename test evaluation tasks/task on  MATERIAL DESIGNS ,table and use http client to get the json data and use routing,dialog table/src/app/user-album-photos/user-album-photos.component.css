@@ -1,0 +1,16 @@
+ 
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  #userTable{
+    width:1342px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .photoUrl{
+    text-decoration: underline !important;
+
+}

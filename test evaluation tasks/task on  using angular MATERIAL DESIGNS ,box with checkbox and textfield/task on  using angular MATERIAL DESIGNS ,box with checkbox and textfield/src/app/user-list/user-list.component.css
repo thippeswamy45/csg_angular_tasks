@@ -1,0 +1,75 @@
+/*
+#userDetailsTable,td,tr,thead,th{
+    border-collapse: collapse;
+    border: 2px solid black;
+
+}
+td,th{
+    padding: 5px;
+    font-size: 15px;
+}
+#userDetailsTable{
+    margin: auto;
+}
+#userDetailsTable{
+    overflow: scroll;
+}
+a{
+    text-decoration :none;
+}
+#showButton{
+    margin-left: 620px;
+    margin-top: 50px;
+}
+#next{
+    margin-left: 402px;
+}
+#box{
+    border: 1px solid black;
+    
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 3px;
+    width: 486px;
+}
+.content{
+    padding:10px;
+}
+.errormsg{
+    color: white;
+    background-color: red;
+    width: 200px;
+    margin-left: 552px;
+    text-align: center;
+}
+*/
+
+
+
+  
+.userFormDiv{
+    border: 2px solid lightgray;
+    margin: auto;
+    padding: 30px;
+    width: 276px;
+}
+
+.submitButton{
+    position: relative;
+    left:28px;
+}
+.textField{
+    width:200px;
+}
+.strike{
+    text-decoration:line-through black;
+    color:red;
+    opacity: 0.3;
+}
+mat-checkbox{
+    
+    position: relative;
+    left: 255px;
+    bottom: 35px;
+
+}

@@ -1,0 +1,75 @@
+
+
+<!--
+<form (ngSubmit)="submitForm(f)" #f="ngForm" id="form1">
+  <div id="inner">
+    <label>name<span class="colon">:</span></label>
+    <input type="text" required name="name"   [(ngModel)]="userDetails.name">
+   
+    <label>username<span class="colon">:</span></label>
+    <input type="text" required name="username"   [(ngModel)]="userDetails.username">
+
+    <label >Email<span class="colon">:</span></label>
+    <input type="email" name="email"  disabled  [(ngModel)]="userDetails.email">
+    
+    <label>address info<span class="colon" >:</span></label>
+    <div class ="address">
+      <label>street<span class="colon" >:</span></label>
+      <textarea id="text_address" name="street" [(ngModel)]="userDetails.address.street"></textarea>
+    
+      <label>city<span class="colon" >:</span></label>
+      <input type="text" required name="city" id="text_city" [(ngModel)]="userDetails.address.city">
+
+      <label>zipcode<span class="colon" >:</span></label>
+      <input type="text" required name="zipcode" id="text_zipcode" [(ngModel)]="userDetails.address.zipcode">
+
+      <label>Phone no<span class="colon" >:</span></label>
+      <input type="text" required name="pn" id="text_pn" [(ngModel)]="userDetails.phone">
+      
+      <label>company name<span class="colon" >:</span></label>
+      <input type="text" required name="companyname" id="text_company" [(ngModel)]="userDetails.company.name">
+    </div>  
+    
+   
+    <div class="buttons">
+     
+      <button [disabled]="!f.valid" type="submit">ok</button>
+      <button type="button" (click)="cancel()">cancel</button>
+    
+    </div>
+  </div>
+ 
+</form>   
+
+-->
+
+<!-- this is for angular material form-->
+
+<div class="userFormDiv">
+<form (ngSubmit)="submitForm()" >
+
+  <mat-form-field>
+    <input matInput placeholder="id" name="id" [formControl]="idformcontrol" [(ngModel)]="userDetails.id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Name" name="name" [formControl]="nameformcontrol" [(ngModel)]="userDetails.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="username" name="username" [formControl]="usernameformcontrol" [(ngModel)]="userDetails.username">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" name="email" [formControl]="emailformcontrol" [(ngModel)]="userDetails.email">
+    <mat-error *ngIf="emailformcontrol.hasError('email')">please enter email</mat-error>
+  </mat-form-field>
+
+<button mat-button type="submit" class="submitButton">save</button>
+<button mat-button  class="cancelButton" (click)="cancel()">cancel</button>
+</form>
+</div>
+
+
+
+

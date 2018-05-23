@@ -1,0 +1,38 @@
+<table  id="userDetailsTable">
+  <thead>
+    <tr>
+    <th>actions</th>
+    <th>id</th>
+    <th>name</th>
+    <th>username</th>
+    <th>email</th>
+    <th>street</th>
+     <th>city</th>
+     <th>zip code</th>
+    <th>pn</th>
+    <th>company name</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of userList">
+      <td><input type="checkbox" class="checkboxes" name="choose" [(ngModel)]="obj.choose" ></td>
+      <td>{{obj.id}}</td>
+      <td>{{obj.name}}</td>
+      <td>{{obj.username}}</td>
+      <td>{{obj.email}}</td>
+      <td>{{obj.address.street}}</td>
+      <td>{{obj.address.city}}</td>
+      <td>{{obj.address.zipcode}}</td>
+      <td>{{obj.phone}}</td>
+      <td>{{obj.company.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button  id="showButton" (click)="show()">getData</button>
+<p  class="errormsg" *ngIf="errorFlag">select checkboxes to display</p>
+
+<div id="box" *ngIf="boxShow">
+  <pre class="content">{{current|json}}</pre>
+  <button  id="prev" [disabled]="previousFlag" (click)="prev()">prev</button><button id="next" [disabled]="nextFlag" (click)="next()">next</button>
+</div>

@@ -1,0 +1,40 @@
+
+
+/* this angular material my  css*/
+
+
+.userFormDiv{
+    border: 2px solid lightgray;
+    margin: auto;
+    padding: 10px;
+    width: 500px;
+}
+mat-form-field{
+    
+    display: block;
+
+}
+.submitButton{
+    position: relative;
+    left:149px;
+}
+.cancelButton{
+    position: relative;
+    left:160px;
+}
+.albumTitleButton{
+    text-decoration: underline !important;
+
+}
+ 
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  #userTable{
+    width:743px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+  }

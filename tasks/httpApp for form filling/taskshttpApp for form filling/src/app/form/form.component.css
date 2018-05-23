@@ -1,0 +1,63 @@
+.buttons{
+    margin-top: 6px;
+    margin-left: 132px;
+}
+
+label{
+    width:180px;
+    clear:left;
+    text-align:left; 
+    padding-right:10px;
+  
+}
+.alert_text{
+clear:both;
+margin-left:200px;
+padding:0px;
+margin-bottom:0px;
+color:red;
+
+}
+
+textarea,input,label{
+    float:left;
+	margin-top:20px;
+   
+}
+.colon{
+float:right;
+}
+div{
+	clear:left;
+	
+}
+
+p.alert_text{
+	clear:left;
+	padding-top:50px;
+
+}
+
+#form1{
+    border: 2px solid lightgray;
+    width: 800px;
+    margin: auto;
+    padding-left: 106px;
+    padding-bottom: 10px;
+    padding-right: 106px;
+}
+
+#text_address{
+    width: 168px;
+}
+
+#inner{
+    position: relative;
+    left: 224px;
+}
+.address{
+    border: 1px solid lightgray;
+    height: 232px;
+    padding: 10px;
+    width: 371px;
+}

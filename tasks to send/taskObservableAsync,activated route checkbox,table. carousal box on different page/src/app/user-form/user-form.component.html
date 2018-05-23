@@ -1,0 +1,17 @@
+
+
+
+
+<div id="box" *ngIf="boxShow">
+  <pre class="content">{{presentData|json}}</pre>
+  <button  id="prev" [disabled]="previousFlag" (click)="prev()">prev</button><button id="next" [disabled]="nextFlag" (click)="next()">next</button>
+</div>
+
+
+
+
+
+
+
+
+

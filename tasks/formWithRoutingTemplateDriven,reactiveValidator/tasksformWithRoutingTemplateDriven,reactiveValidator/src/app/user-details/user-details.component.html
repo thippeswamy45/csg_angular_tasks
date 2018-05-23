@@ -1,0 +1,32 @@
+
+
+
+<table [hidden]="showTable" id="userDetailsTable">
+  <thead>
+    <tr>
+    <th>actions</th>
+    <th>E id</th>
+    <th>fn</th>
+    <th>ln</th>
+    <th>pn</th>
+    <th>email</th>
+    <th>address</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of json.UserDetails">
+      <td><a routerLink="/userdetails/editdetails/{{obj.E_id}}" ><button (click)="editForm(obj.E_id)">edit</button></a> <button (click)="deleteElement(obj.E_id)">delete</button></td>
+      <td>{{obj.E_id}}</td>
+      <td>{{obj.FN}}</td>
+      <td>{{obj.LN}}</td>
+      <td>{{obj.pn}}</td>
+      <td>{{obj.Email}}</td>
+      <td>{{obj.address}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="newbtn" [hidden]="newButton"><a routerLink="/userdetails/newuserdetails" ><button (click)="newData()">new</button></a></p>
+
+<app-edit-user *ngIf="edit" [userDetails]="json.UserDetails[arrayIndex]"  (updateEvent)="takeValue($event)"></app-edit-user>
+<app-new-user-details [hidden]="!new" (dataPushEvent)="addRow($event)"></app-new-user-details>

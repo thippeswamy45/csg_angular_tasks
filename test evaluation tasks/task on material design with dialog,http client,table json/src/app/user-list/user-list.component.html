@@ -1,0 +1,47 @@
+
+category <mat-form-field class="categoryDropdown">
+  <mat-select placeholder="select one" [(value)]="selectedValue">
+    <mat-option *ngFor="let item of dropDownItems" [value]="item">
+      {{ item }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> 
+<button mat-button (click)="showUsers()" >Get data</button>
+
+<div *ngIf="ShowUsersFlag">
+
+  <mat-table [dataSource]="data$ | async" id="userTable">
+
+  
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef>username</mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.username}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>email</mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>actions</mat-header-cell>
+      <mat-cell *matCellDef="let user"><button mat-button (click)="showAlbums(user.id)" >show albums</button><!-- <button (click)="deleteElement(user.id)" >delete</button>--></mat-cell>
+  </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+  </mat-table>
+
+ 
+
+</div>

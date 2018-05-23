@@ -1,0 +1,10 @@
+<h1> date format convesion</h1>
+
+<input type="text"  #inputDate [(ngModel)]="dateValue">
+
+
+<button (click)="displayDate()">click to see converted date format</button>
+<div *ngIf="displaydate">
+<!-- <p> format my date to :{{dateValue|date:"MM/dd/yyyy a zzzz"}}</p>-->
+<p> format my date to :{{dateValue|dateMmddyyyyaz}}</p>
+</div>

@@ -1,0 +1,40 @@
+<!--
+<div class="userFormDiv">
+  <form (ngSubmit)="submitForm()" >
+  
+    <mat-form-field class="formfields">
+      <input matInput placeholder="enter text" class="textField" name="textData" [formControl]="textdataformcontrol" required [(ngModel)]="userDetails.textdata">
+    </mat-form-field>
+    <button mat-button type="submit" class="submitButton">add task</button>
+
+
+    <div *ngFor="let task of userDetails.dataArray" class="checkBoxDiv">
+      <mat-form-field class="formfields">
+        <input matInput placeholder="" [ngClass]="{'strike':userDetails.checkFlag[userDetails.dataArray.indexOf(task)]}" readonly [value]="task" name="+task+"  >
+        
+      </mat-form-field> 
+      <mat-checkbox [(ngModel)]="userDetails.checkFlag[userDetails.dataArray.indexOf(task)]" name="+userDetails.dataArray.indexOf(task)+" ></mat-checkbox>
+    </div>
+  </form>
+  </div>
+
+-->
+
+<div class="userFormDiv">
+  <form (ngSubmit)="submitForm()" >
+  
+    <mat-form-field class="formfields">
+      <input matInput placeholder="enter text" class="textField" name="textData" [formControl]="textdataformcontrol" required [(ngModel)]="userDetails.textdata">
+    </mat-form-field>
+    <button mat-button type="submit" class="submitButton">add task</button>
+
+    
+    <div *ngFor="let task of userDetails.taskListArray" class="checkBoxDiv">
+      <mat-list>
+        <mat-list-item [ngClass]="{'strike':userDetails.checkFlag[userDetails.taskListArray.indexOf(task)]}"  name="+task+" >{{task}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-checkbox [(ngModel)]="userDetails.checkFlag[userDetails.taskListArray.indexOf(task)]" name="+userDetails.taskListArray.indexOf(task)+" ></mat-checkbox>
+      </mat-list> 
+    </div>
+  </form>
+  </div>
